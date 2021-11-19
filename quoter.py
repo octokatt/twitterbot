@@ -19,18 +19,20 @@ def create_tweet(quote, author):
 def assemble():
   quote, author = get_quote()
   tweet = create_tweet(quote, author)
+  update_quotes_file()
   return tweet
 
 
 def shuffle_quotes(quotes):
+  used_quote = quotes.iloc[0]
   shuffled = quotes.iloc[1:]
-  shuffled.append(quotes.iloc[0])
-  shuffled.reset_index()
-  return shuffled
-
-def update_quotes(new_file):
-  new_file.to_csv('quotes_shuffed.csv', index=False)
+  updated = shuffled.append(used_quote)
+  return updated
 
 def update_quotes_file():
-  new_csv = shuffle_quotes()
-  update_quotes(new_csv)
+  current_csv = pull_quotes()
+  new_csv = shuffle_quotes(current_csv)
+  new_csv.to_csv('quotes.csv', index=False)
+
+tweet = assemble()
+print(tweet)
