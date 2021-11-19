@@ -2,3 +2,7 @@ credentials.py
 
 *.xlsx
 quotes_copy.csv
+
+__pycache__
+.ipynb_checkpoints
+.ipynb_checkpoints/*
