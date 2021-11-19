@@ -1,5 +1,6 @@
 import tweepy
 import credentials as cred
+import quoter
 
 
 # Authenticate to Twitter
@@ -10,5 +11,6 @@ auth.set_access_token(cred.ACCESS_TOKEN, cred.ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
 
 # Create a tweet
-api.update_status("App credentials set")
+tweet = quoter.assemble()
+api.update_status(tweet)
 

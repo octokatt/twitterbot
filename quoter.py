@@ -33,6 +33,3 @@ def update_quotes_file():
   current_csv = pull_quotes()
   new_csv = shuffle_quotes(current_csv)
   new_csv.to_csv('quotes.csv', index=False)
-
-tweet = assemble()
-print(tweet)
