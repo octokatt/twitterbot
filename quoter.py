@@ -23,6 +23,10 @@ def assemble():
   return tweet
 
 
+# Separated for now
+# Ideally, should pop quote, save to end, then run
+# This is good enough for now
+
 def shuffle_quotes(quotes):
   used_quote = quotes.iloc[0]
   shuffled = quotes.iloc[1:]
