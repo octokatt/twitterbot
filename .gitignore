@@ -1,7 +1,7 @@
 credentials.py
+environment.yml
 
 *.xlsx
-quotes_copy.csv
 
 __pycache__
 .ipynb_checkpoints
