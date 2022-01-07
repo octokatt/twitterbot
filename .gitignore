@@ -1,6 +1,5 @@
 credentials.py
-
 *.xlsx
 
-env
-env/*
+twitterbot
+twitterbot/*
