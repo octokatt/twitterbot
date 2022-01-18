@@ -1,15 +1,27 @@
+from os import environ
+
 import tweepy
-import credentials as cred
 import quoter
 
+# Pull authentication keys
+CONSUMER_KEY = environ['CONSUMER_KEY']
+CONSUMER_SECRET = environ['CONSUMER_SECRET']
+ACCESS_KEY = environ['ACCESS_KEY']
+ACCESS_SECRET = environ['ACCESS_SECRET']
+
+# Set interval for Twitter Bot
+INTERVAL = 60 * 60 * 24
 
 # Authenticate to Twitter
-auth = tweepy.OAuthHandler(cred.CONSUMER_KEY, cred.CONSUMER_SECRET)
-auth.set_access_token(cred.ACCESS_TOKEN, cred.ACCESS_TOKEN_SECRET)
+auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 
 # Create API object
 api = tweepy.API(auth)
 
-# Create a tweet
-tweet = quoter.assemble()
-api.update_status(tweet)
+# Tweet every Interval
+while True:
+	print("assembling quote...")
+	tweet = quoter.assemble()
+	api.update_status(tweet)
+	time.sleep(INTERVAL)
