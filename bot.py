@@ -7,8 +7,8 @@ import quoter
 # Pull authentication keys
 CONSUMER_KEY = environ['CONSUMER_KEY']
 CONSUMER_SECRET = environ['CONSUMER_SECRET']
-ACCESS_KEY = environ['ACCESS_KEY']
-ACCESS_SECRET = environ['ACCESS_SECRET']
+ACCESS_TOKEN = environ['ACCESS_TOKEN']
+ACCESS_TOKEN_SECRET = environ['ACCESS_TOKEN_SECRET']
 
 # Set interval for Twitter Bot
 INTERVAL = 60 * 60 * 24
