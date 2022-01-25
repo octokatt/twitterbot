@@ -1,7 +1,8 @@
 import sys
 from os import environ
-
 import tweepy
+import time
+
 import quoter
 
 # Pull authentication keys
