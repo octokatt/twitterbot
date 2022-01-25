@@ -5,6 +5,7 @@ import time
 
 import quoter
 
+
 # Pull authentication keys
 CONSUMER_KEY = environ['CONSUMER_KEY']
 CONSUMER_SECRET = environ['CONSUMER_SECRET']
