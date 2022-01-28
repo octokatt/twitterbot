@@ -13,7 +13,7 @@ ACCESS_TOKEN = environ['ACCESS_TOKEN']
 ACCESS_TOKEN_SECRET = environ['ACCESS_TOKEN_SECRET']
 
 # Set interval for Twitter Bot
-INTERVAL = 60 * 60 * 12
+INTERVAL = 60 * 60 * 6
 
 # Authenticate to Twitter
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
