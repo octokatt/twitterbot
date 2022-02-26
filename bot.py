@@ -6,14 +6,15 @@ import time
 import quoter
 
 
-# Pull authentication keys
+# Pull authentication keys from environment
 CONSUMER_KEY = environ['CONSUMER_KEY']
 CONSUMER_SECRET = environ['CONSUMER_SECRET']
 ACCESS_TOKEN = environ['ACCESS_TOKEN']
 ACCESS_TOKEN_SECRET = environ['ACCESS_TOKEN_SECRET']
 
+
 # Set interval for Twitter Bot
-INTERVAL = 60 * 60 * 6
+INTERVAL = 60 * 10
 
 # Authenticate to Twitter
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
