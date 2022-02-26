@@ -1,5 +1,7 @@
 import pandas as pd
 
+# Handle the quotes file, update as needed
+
 def pull_quotes():
   quotes = pd.read_csv('quotes.csv')
   return quotes
@@ -13,20 +15,6 @@ def get_quote():
 
   return quote, author
 
-def create_tweet(quote, author):
-  return "{}  -- {}".format(quote, author)
-
-def assemble():
-  quote, author = get_quote()
-  tweet = create_tweet(quote, author)
-  update_quotes_file()
-  return tweet
-
-
-# Separated for now
-# Ideally, should pop quote, save to end, then run
-# This is good enough for now
-
 def shuffle_quotes(quotes):
   used_quote = quotes.iloc[0]
   shuffled = quotes.iloc[1:]
@@ -37,3 +25,15 @@ def update_quotes_file():
   current_csv = pull_quotes()
   new_csv = shuffle_quotes(current_csv)
   new_csv.to_csv('quotes.csv', index=False)
+
+
+# Create the tweet, and call the file handling
+
+def create_tweet(quote, author):
+  return "{}  -- {}".format(quote, author)
+
+def assemble():
+  quote, author = get_quote()
+  tweet = create_tweet(quote, author)
+  update_quotes_file()
+  return tweet
